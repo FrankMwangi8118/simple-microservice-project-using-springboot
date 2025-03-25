@@ -18,4 +18,6 @@ public interface StudentRepo {
 
 
     Optional<Student> getbyTheId(String id);
+
+    Optional<List<Student>> getStudentsById(String id);
 }

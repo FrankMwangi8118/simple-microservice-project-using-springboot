@@ -69,4 +69,13 @@ public class StudentRepoImpl implements StudentRepo {
     public Optional<Student> getbyTheId(String id) {
        return studentRepository.findById(id);
     }
+
+    /**
+     * @param id 
+     * @return
+     */
+    @Override
+    public Optional<List<Student>> getStudentsById(String id) {
+        return studentRepository.findBySchoolId(id);
+    }
 }

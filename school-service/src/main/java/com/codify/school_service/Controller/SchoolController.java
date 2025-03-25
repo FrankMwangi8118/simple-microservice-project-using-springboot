@@ -1,6 +1,7 @@
 package com.codify.school_service.Controller;
 
 import com.codify.school_service.Repository.JdbcRepository;
+import com.codify.school_service.Repository.Model.Response;
 import com.codify.school_service.Repository.Model.School;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,10 @@ public class SchoolController {
     @GetMapping("/")
     public List<School>getAllSchools(){
         return jdbcRepository.getAllSchool();
+    }
+    @GetMapping("/school/{schoolId}")
+    public Response getSchoolStudent(@PathVariable String schoolId){
+        return jdbcRepository.allSchoolStudent(schoolId);
     }
 
 }
