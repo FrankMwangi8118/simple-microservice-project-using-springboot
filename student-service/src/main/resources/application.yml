@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  application:
+    name: student-service
   datasource:
     url: jdbc:postgresql://127.0.0.1:5433/student_db
     username: mwas
@@ -20,3 +22,12 @@ rest:
   template:
     connect-timeout: 10000
     read-timeout: 10000
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
